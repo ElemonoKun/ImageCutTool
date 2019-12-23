@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageCutTool"
         mc:Ignorable="d"
-        Title="ImageCutTool" Height="546" Width="800"
+        Title="ImageCutTool" Height="171" Width="582"
         Background="Plum">
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
@@ -18,7 +18,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="10,10,10,0">
         <StackPanel Orientation="Horizontal" Margin="5"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top">
@@ -28,7 +28,7 @@
             <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" Command="{Binding Path=CloseCommand}"
                     CommandParameter="{Binding ElementName=Main}" Click="CaptionClose_Click" />
         </StackPanel>
-        <Button x:Name="button" Content="FileOpen" HorizontalAlignment="Left" Margin="10,465,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="FileOpenButton_Click">
+        <Button x:Name="FileOpenButton" Content="FileOpen" HorizontalAlignment="Left" Margin="10,80,0,10" VerticalAlignment="Top" Width="82" Height="25" Click="FileOpenButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB9AFAF" Offset="1"/>
@@ -47,28 +47,17 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Canvas x:Name="imgEditCanvas" HorizontalAlignment="Center" Height="420" Margin="10,5,10,45" VerticalAlignment="Center" Width="750" MouseLeftButtonDown="imgEditCanvas_MouseLeftButtonDown"/>
-        <TextBlock x:Name="X1_TBlk" HorizontalAlignment="Left" Margin="738,455,0,26" TextWrapping="Wrap" Width="29" RenderTransformOrigin="1.621,0.524" VerticalAlignment="Top">
+        <TextBlock x:Name="X1_TBlk" HorizontalAlignment="Left" Margin="738,10,0,10" TextWrapping="Wrap" Width="29" RenderTransformOrigin="1.621,0.524" VerticalAlignment="Top">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <Label x:Name="X1_Label" Content="Before X :" HorizontalAlignment="Left" Margin="677,450,0,0" VerticalAlignment="Top">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
-        <Label x:Name="Y1_Label" Content="Before Y :" HorizontalAlignment="Left" Margin="677,470,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.69,0.423">
-            <Label.Effect>
-                <DropShadowEffect/>
-            </Label.Effect>
-        </Label>
-        <TextBlock x:Name="Y1_TBlk" HorizontalAlignment="Left" Margin="738,475,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16">
+        <TextBlock x:Name="Y1_TBlk" HorizontalAlignment="Left" Margin="738,10,0,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="29" Height="16">
             <TextBlock.Effect>
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
-        <Button x:Name="CutImgViewButton" Content="CutImg_View" HorizontalAlignment="Left" Margin="280,465,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="CutImgViewButton_Click" Foreground="Black">
+        <Button x:Name="CutImgViewButton" Content="CutImg_View" HorizontalAlignment="Left" Margin="280,80,0,10" VerticalAlignment="Top" Width="82" Height="25" Click="CutImgViewButton_Click" Foreground="Black">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3F9503" Offset="1"/>
@@ -79,7 +68,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="SaveImgButton" Content="SaveImg" HorizontalAlignment="Left" Margin="370,465,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="SaveImgButton_Click" Foreground="Black">
+        <Button x:Name="SaveImgButton" Content="SaveImg" HorizontalAlignment="Left" Margin="370,80,0,10" VerticalAlignment="Top" Width="82" Height="25" Click="SaveImgButton_Click" Foreground="Black">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF5F455D" Offset="1"/>
@@ -90,7 +79,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="LineCompleteButton" Content="LineComplete" HorizontalAlignment="Left" Margin="190,465,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="LineCompleteButton_Click" Foreground="Black">
+        <Button x:Name="LineCompleteButton" Content="LineComplete" HorizontalAlignment="Left" Margin="190,80,0,10" VerticalAlignment="Top" Width="82" Height="25" Click="LineCompleteButton_Click" Foreground="Black">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFD66100" Offset="1"/>
@@ -101,7 +90,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="LineResetButton" Content="LineReset" HorizontalAlignment="Left" Margin="100,465,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="LineResetButton_Click" Foreground="Black">
+        <Button x:Name="LineResetButton" Content="LineReset" HorizontalAlignment="Left" Margin="100,80,0,10" VerticalAlignment="Top" Width="82" Height="25" Click="LineResetButton_Click" Foreground="Black">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF3B4DA2" Offset="1"/>
@@ -114,7 +103,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="LineUndoButton" Content="LineUndo" HorizontalAlignment="Left" Margin="460,465,0,0" VerticalAlignment="Top" Width="82" Height="25" Click="LineUndoButton_Click" Foreground="Black">
+        <Button x:Name="LineUndoButton" Content="LineUndo" HorizontalAlignment="Left" Margin="460,80,0,10" VerticalAlignment="Top" Width="82" Height="25" Click="LineUndoButton_Click" Foreground="Black">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFDCAB03" Offset="1"/>
